@@ -15,3 +15,4 @@ class IndexRoutes {
 
 const indexRoutes = new IndexRoutes();
 export default indexRoutes.router; 
+/*---*/
