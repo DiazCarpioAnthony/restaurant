@@ -26,7 +26,7 @@ class Server {
 
     routes():void {
         //LLAMA A LAS RUTAS DEL INDEXROUTES QUE SUS DIRECC CORREN A PARTIR DE ESTA DIRECCION
-        this.app.use('/api/platillos',indexRoutes);
+        this.app.use('/api/frase',indexRoutes);
     }
 
     start():void {

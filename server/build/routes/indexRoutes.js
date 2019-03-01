@@ -12,10 +12,11 @@ class IndexRoutes {
     }
     config() {
         this.router.get('/', indexController_1.default.list);
+        this.router.get('/count', indexController_1.default.count);
         this.router.get('/:idFrase', indexController_1.default.getOne);
         this.router.post('/', indexController_1.default.create);
         this.router.put('/:idFrase', indexController_1.default.update);
-        this.router.delete('/:iidFrase', indexController_1.default.delete);
+        this.router.delete('/:idFrase', indexController_1.default.delete);
     }
 }
 const indexRoutes = new IndexRoutes();

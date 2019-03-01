@@ -29,6 +29,12 @@ class IndexController {
             res.status(404).json({ text: "No hay frases" });
         });
     }
+    count(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const numFrases = yield database_1.default.query('SELECT COUNT(*) AS "CANTIDAD" FROM fraseDia');
+            res.json(numFrases);
+        });
+    }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO fraseDia set ?', [req.body]);

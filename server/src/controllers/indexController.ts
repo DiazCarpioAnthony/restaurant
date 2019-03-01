@@ -16,6 +16,10 @@ class IndexController{
         }
         res.status(404).json({text: "No hay frases"});
     }
+    public async count(req:Request , res:Response ): Promise<void>{
+        const numFrases = await pool.query('SELECT COUNT(*) AS "CANTIDAD" FROM fraseDia');
+        res.json(numFrases);
+    }
     public async create(req:Request , res:Response ): Promise<void>{
         await pool.query('INSERT INTO fraseDia set ?', [req.body]);
         res.json({text: 'creating frase'});

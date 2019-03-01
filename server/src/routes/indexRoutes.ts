@@ -10,10 +10,11 @@ class IndexRoutes {
 
     config():void{
         this.router.get('/', indexController.list);
+        this.router.get('/count', indexController.count);
         this.router.get('/:idFrase', indexController.getOne);
         this.router.post('/', indexController.create);
         this.router.put('/:idFrase', indexController.update);
-        this.router.delete('/:iidFrase', indexController.delete);
+        this.router.delete('/:idFrase', indexController.delete);
     }
 
 }
