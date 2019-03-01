@@ -13,12 +13,12 @@ footer {
 footer .copyright {
 	text-align: center;
 	padding: 15px 0;
+	padding-bottom: 0px;
 	color: #fff;
 }
 
 footer .copyright a {
 	text-align: center;
-	padding: 15px 0;
 	color: #fff;
 	text-decoration: none;
 }

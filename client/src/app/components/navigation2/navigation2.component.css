@@ -57,6 +57,10 @@ header nav a:hover{
     color: #df9d23;
     animation: 0.5s hover-transicion linear;
 }
+/*---ACTIVE---*/
+header nav .active{
+    color: #df9d23;
+}
 @keyframes hover-transicion {
     from{
         color: #071d27;

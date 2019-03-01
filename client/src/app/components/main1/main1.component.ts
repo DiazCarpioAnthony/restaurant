@@ -66,10 +66,10 @@ export class Main1Component implements OnInit {
 	}
 
 // Scroll Elementos Menu
-	   var acercaDe = $('#acerca-de').offset().top,
-		menu = $('#platillos').offset().top,
-		galeria = $('#galeria').offset().top,
-		ubicacion = $('#ubicacion').offset().top;
+	  var   acercaDe = $('#acerca-de').offset().top,
+					menu = $('#platillos').offset().top,
+					galeria = $('#galeria').offset().top,
+					ubicacion = $('#ubicacion').offset().top;
 
 	   $('#btn-acerca-de').on('click', function(e: any) {
 		e.preventDefault();
@@ -95,48 +95,52 @@ export class Main1Component implements OnInit {
 	   $('#btn-ubicacion').on('click', function(e) {
 		e.preventDefault();
 		$('html, body').animate({
-			scrollTop: ubicacion
+			scrollTop: ubicacion- 100
 		}, 500);
 	});
 
 	// Efecto about
 	   document.getElementById('about').addEventListener('click', function(e) {
-		// alert("Platillo 1");
-		e.preventDefault();
+			// alert("Platillo 1");
+				e.preventDefault();
 
-		$('html, body').animate({
-			scrollTop: 0
-		}, 1000);
+				$('html, body').animate({
+					scrollTop: 0
+				}, 1000);
 
-		// FUNCION PARA EFECTO BLUR
-		$({blurRadius: 0}).animate({blurRadius: 10}, {
-			easing: 'linear',
-			step() {
-				$('body').css({
-					'-webkit-filter': 'blur(' + this.blurRadius + 'px)',
-					filter: 'blur(' + this.blurRadius + 'px)'
+				// CAMBIO DE PAGINA SPA
+				$({opacityRadius: 0}).animate({opacityRadius: 1}, {
+					easing: 'linear',
+					step() {
+						$('body').css({
+							opacity: this.opacityRadius 
+						});
+					}
+				}, 1000);
+				
+
+			});
+			//btn-pedidoBook
+			document.getElementById('btn-pedidoBook').addEventListener('click', function(e) {
+				// alert("Platillo 1");
+					e.preventDefault();
+	
+					$('html, body').animate({
+						scrollTop: 0
+					}, 1000);
+	
+					// CAMBIO DE PAGINA SPA
+					$({opacityRadius: 0}).animate({opacityRadius: 1}, {
+						easing: 'linear',
+						step() {
+							$('body').css({
+								opacity: this.opacityRadius 
+							});
+						}
+					}, 1000);
+					
+	
 				});
-			}
-		}, 1000);
-
-		// CAMBIO DE PAGINA SPA
-		setTimeout(function() {
-
-			$({blurRadius: 10}).animate({blurRadius: 0}, {
-				easing: 'linear',
-				step() {
-					$('body').css({
-						'-webkit-filter': 'blur(' + this.blurRadius + 'px)',
-						filter: 'blur(' + this.blurRadius + 'px)'
-					});
-				}
-			}, 2000);
-
-
-		 location.href = './index2.html';
-		}, 1500);
-	});
-
 	// Efectos platillos
 	   document.getElementById('platillo-1').addEventListener('click', function(e) {
 		// alert("Platillo 1");

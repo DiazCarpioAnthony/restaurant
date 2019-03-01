@@ -6,7 +6,8 @@ declare var $: any;
     selector: 'app-main2',
     templateUrl: './main2.component.html',
     styleUrls: ['./main2.component.css',
-        '../../../animate.css']
+        '../../../animate.css'],
+        
 })
 export class Main2Component implements OnInit {
 
