@@ -75,7 +75,9 @@ header .menu-android{
     header .menu-android{
         visibility: visible;
         height: auto;
+        margin: 0px;
     }
+
     .header-wrap{
         display: none;
     }
@@ -93,3 +95,15 @@ header{
     position: fixed;
 }
 
+
+/*Por ahora para poner el banner*/
+@media screen and (max-width: 991px) {
+
+    .banner{
+        margin-top: 80px;
+    }
+    header{
+        position: fixed;
+        margin-top: -80px;
+    }
+}
