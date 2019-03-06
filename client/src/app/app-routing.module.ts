@@ -7,6 +7,8 @@ import { Main1Component } from './components/main1/main1.component';
 import { Navigation2Component } from './components/navigation2/navigation2.component';
 import { Main2Component } from './components/main2/main2.component';
 import { Banner2Component } from './components/banner2/banner2.component';
+import { AboutComponent } from './components/about/about.component';
+import { ComentariosComponent } from './components/comentarios/comentarios.component';
 
 const routes: Routes = [
   {
@@ -33,8 +35,16 @@ const routes: Routes = [
         component: Banner2Component,
         children: [
           {
-            path: '',
+            path: 'index',
             component: Main2Component
+          },
+          {
+            path: 'about',
+            component: AboutComponent
+          },
+          {
+            path: 'comentarios',
+            component: ComentariosComponent
           }
         ]
       }

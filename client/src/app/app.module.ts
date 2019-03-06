@@ -15,6 +15,8 @@ import { Main2Component } from './components/main2/main2.component';
 //SERVICES
 import { FraseDiaService } from './services/frase-dia.service';
 import { Banner2Component } from './components/banner2/banner2.component';
+import { AboutComponent } from './components/about/about.component';
+import { ComentariosComponent } from './components/comentarios/comentarios.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { Banner2Component } from './components/banner2/banner2.component';
     Navigation2Component,
     Main1Component,
     Main2Component,
-    Banner2Component
+    Banner2Component,
+    AboutComponent,
+    ComentariosComponent
   ],
   imports: [
     BrowserModule,
