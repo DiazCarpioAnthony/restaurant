@@ -26,7 +26,9 @@ class IndexController {
             if (fraseHoy.length > 0) {
                 res.json(fraseHoy);
             }
-            res.status(404).json({ text: "No hay frases" });
+            else {
+                res.status(404).json({ text: "No hay frases" });
+            }
         });
     }
     count(req, res) {

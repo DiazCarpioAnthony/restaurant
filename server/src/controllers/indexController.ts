@@ -13,8 +13,10 @@ class IndexController{
         const fraseHoy = await pool.query('SELECT * FROM fraseDia WHERE idFrase = ?', [idFrase]);
         if(fraseHoy.length > 0){
             res.json(fraseHoy);
+        }else{
+            res.status(404).json({text: "No hay frases"});
         }
-        res.status(404).json({text: "No hay frases"});
+        
     }
     public async count(req:Request , res:Response ): Promise<void>{
         const numFrases = await pool.query('SELECT COUNT(*) AS "CANTIDAD" FROM fraseDia');

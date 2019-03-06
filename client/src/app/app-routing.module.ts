@@ -7,7 +7,6 @@ import { Main1Component } from './components/main1/main1.component';
 import { Navigation2Component } from './components/navigation2/navigation2.component';
 import { Main2Component } from './components/main2/main2.component';
 import { Banner2Component } from './components/banner2/banner2.component';
-import { Main21Component } from './components/main21/main21.component';
 
 const routes: Routes = [
   {
@@ -35,7 +34,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            component: Main21Component
+            component: Main2Component
           }
         ]
       }
