@@ -1,43 +1,34 @@
-//MODULES
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 
-//COMPONENTS
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './components/shared/footer/footer.component';
-import { Navigation1Component } from './components/navigation1/navigation1.component';
-import { Navigation2Component } from './components/navigation2/navigation2.component';
-import { Main1Component } from './components/main1/main1.component';
-import { Main2Component } from './components/main2/main2.component';
-
-//SERVICES
-import { FraseDiaService } from './services/frase-dia.service';
-import { Banner2Component } from './components/banner2/banner2.component';
-import { AboutComponent } from './components/about/about.component';
-import { ComentariosComponent } from './components/comentarios/comentarios.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { Header1Component } from './page1/header1/header1.component';
+import { Header2Component } from './page2/header2/header2.component';
+import { Main1Component } from './page1/main1/main1.component';
+import { Banner2Component } from './page2/banner2/banner2.component';
+import { Main2Component } from './page2/main2/main2.component';
+import { About2Component } from './page2/about2/about2.component';
+import { Comments2Component } from './page2/comments2/comments2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    Navigation1Component,
-    Navigation2Component,
+    Header1Component,
+    Header2Component,
     Main1Component,
-    Main2Component,
     Banner2Component,
-    AboutComponent,
-    ComentariosComponent
+    Main2Component,
+    About2Component,
+    Comments2Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+    AppRoutingModule
   ],
-  providers: [
-    FraseDiaService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
