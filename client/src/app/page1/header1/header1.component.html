@@ -1,3 +1,19 @@
-<p>
-  header1 works!
-</p>
+<!--Identar SHIFT+ALT+F-->
+<header>
+  <div class="contenedor">
+    <nav class="menu">
+      <a href="#" id="btn-acerca-de">Acerca de</a>
+      <a href="#" id="btn-menu">Menu</a>
+      <a href="#" id="btn-galeria">Galeria</a>
+      <a href="#" id="btn-ubicacion">Ubicacion</a>
+      <a routerLink="/armaTuPedido" id="btn-armaTuPedido">Arma tu pedido</a>
+    </nav>
+
+    <div class="textos">
+      <h1 class="nombre">Anticuchería <span>El Buen Sazón</span></h1>
+      <h3>Anticuchería fundadada el 15 de febrero de 1901</h3>
+    </div>
+  </div>
+</header>
+
+<router-outlet></router-outlet>

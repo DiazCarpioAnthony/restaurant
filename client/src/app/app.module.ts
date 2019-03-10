@@ -1,6 +1,9 @@
+// MODULES
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
+// COMPONENTS
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -11,6 +14,9 @@ import { Banner2Component } from './page2/banner2/banner2.component';
 import { Main2Component } from './page2/main2/main2.component';
 import { About2Component } from './page2/about2/about2.component';
 import { Comments2Component } from './page2/comments2/comments2.component';
+
+// SERVICES
+import { FraseDiaService } from './services/frase-dia.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +32,12 @@ import { Comments2Component } from './page2/comments2/comments2.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    FraseDiaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
