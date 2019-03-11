@@ -1,0 +1,113 @@
+h1::selection,h2::selection,h3::selection, span::selection,
+p::selection, a::selection, label::selection  {
+    background: rgb(126, 161, 60);
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px #fff;
+}
+
+/* Firefox */
+h1::-moz-selection,h2::-moz-selection,h3::-moz-selection, span::-moz-selection,
+p::-moz-selection, a::-moz-selection, label::-moz-selection {
+    background: rgb(126, 161, 60);
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px #fff;
+}
+
+h1,h2,h3 {
+    
+    font-family: "Playfair Display", serif;
+}
+a{
+    font-family: 'Open Sans', sans-serif;
+}
+/*-----------------------HEADER--------------*/
+header {
+    padding: 10px 0;
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    z-index: 999999;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s; 
+}
+
+.logo {
+     display: flex;
+     justify-content: center;
+}
+.menu-right, .menu-left{
+     display: flex;
+     justify-content: space-around;
+    
+}
+header .header-wrap{
+    margin: 10px 0px;
+}
+
+header nav a{
+    display: block;
+    color: #071d27;
+    text-decoration: none;
+}
+
+header nav a:hover{
+    text-decoration: none;
+    color: #df9d23;
+    animation: 0.5s hover-transicion linear;
+}
+/*---ACTIVE---*/
+header nav .active{
+    color: #df9d23;
+}
+@keyframes hover-transicion {
+    from{
+        color: #071d27;
+    }
+    to{
+        color: #df9d23;
+        text-decoration: none;
+    }
+}
+header .menu-android{
+    visibility:hidden;
+    height: 0px;
+}
+@media screen and (max-width: 991px) {
+
+    header .menu-android{
+        visibility: visible;
+        height: auto;
+        margin: 0px;
+    }
+
+    .header-wrap{
+        display: none;
+    }
+    .navbar-toggler-icon{
+        background: #000;
+    }
+
+}
+/*Arreglando el boton android menu*/
+.navbar-light .navbar-toggler-icon {
+    background: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+header{
+    position: fixed;
+}
+
+
+/*Por ahora para poner el banner*/
+@media screen and (max-width: 991px) {
+
+    .banner{
+        margin-top: 80px;
+    }
+    header{
+        position: fixed;
+        margin-top: -80px;
+    }
+}

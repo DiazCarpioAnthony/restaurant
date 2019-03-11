@@ -1,0 +1,17 @@
+.comentarios{
+    width: 80%;
+    margin: auto;
+    padding: 50px 10px; 
+}
+.comentarios h3{
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+@media screen and (max-width: 800px) {
+    .comentarios{
+        width: 90%;
+        margin: auto;
+        padding: 50px 0px; 
+    }
+}

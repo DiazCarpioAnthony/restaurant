@@ -1,0 +1,27 @@
+.about {
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    border-bottom: 0.5px solid rgb(24, 20, 20);
+}
+.about div {
+    float: left;
+	width: 50%;
+	float: left;
+    text-align: center;
+    padding: 100px;
+}
+.about div h3{
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+.about div p{
+    display: block;
+    padding: 10px; 
+    width: 70%;
+    margin: auto;
+    font-weight: bold;
+    font-size: 19px;
+    font-family: 'Open Sans', sans-serif;
+}

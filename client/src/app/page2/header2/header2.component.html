@@ -1,3 +1,40 @@
-<p>
-  header2 works!
-</p>
+<header>
+  <div class="container">
+    <div class="header-wrap">
+      <nav class="header-top d-flex justify-content-between align-items-center">
+        <div class="col menu-left">
+          <a routerLinkActive="active" routerLink='../home'>Home</a>
+          <a routerLinkActive="active" routerLink='about'>Conócenos</a>
+        </div>
+        <div class="col-3 logo">
+          <a routerLink="/index"><img class="mx-auto" src="../../../assets/img/logo.png" alt="" height="50px"></a>
+        </div>
+        <div class="col menu-right">
+          <a routerLinkActive="active" routerLink='index' href="#" id="armaTuPedido">Arma tu pedido</a>
+          <a routerLinkActive="active" routerLink='comentarios'>Reseñas</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <nav class="menu-android navbar navbar-light bg-lignt">
+
+    <div class="navbar-collapse collapse" id="collapsingNavbar2">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink='../home'>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='about'>Conócenos</a>
+          <a class="nav-link" routerLink='index' href="#"  id="armaTuPedido">Arma tu pedido</a>
+          <a class="nav-link" routerLink='comentarios'>Reseñas</a>
+        </li>
+      </ul>
+    </div>
+    <a routerLink="/index"><img class="mx-auto" src="../../../assets/img/logo.png" alt="" height="40px"></a>
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
+      <span class="navbar-toggler-icon my-toggler"></span>
+    </button>
+  </nav>
+  </header>
+
+  <router-outlet></router-outlet>

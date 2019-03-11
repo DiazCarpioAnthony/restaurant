@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FraseDiaService } from '../../services/frase-dia.service';
-import { FraseDia } from '../../models/FraseDia';
 
 declare var jQuery: any;
 declare var $: any;
