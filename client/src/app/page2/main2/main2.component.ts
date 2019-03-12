@@ -47,7 +47,7 @@ export class Main2Component implements OnInit {
           // OBTENER EL ID DEL CHECBOX
           // console.log($(this).attr("for"));
           const $id = $(this).attr('for');
-          $('#img-platillo').attr('src', '../../../assets/img/' + $id + '.jpg');
+          $('#img-platillo').attr('src', 'assets/img/' + $id + '.jpg');
 
           // LIMPIAR LAS CLASES
           $('#img-platillo').removeClass('animated flip');
