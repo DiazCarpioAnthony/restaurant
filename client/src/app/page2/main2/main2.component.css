@@ -231,15 +231,18 @@ header{
 .menu-area .container2 .list-right .single-menu .list li{
     display: block;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 .menu-area .container2 .list-right .single-menu .list li label{
+    display: block;
     order: 0;
     cursor: pointer;
+    width: 80%;
 }
 .menu-area .container2 .list-right .single-menu .list li input{
     order: 1;
     display: block;
+    width: 8%;
     position: absolute;
     right: 0;
     margin-right: 40px;

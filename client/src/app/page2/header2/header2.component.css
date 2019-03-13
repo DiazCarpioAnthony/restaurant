@@ -110,4 +110,8 @@ header{
         position: fixed;
         margin-top: -80px;
     }
+    .container2{
+        width: 90%;
+        margin: auto;
+    }
 }
