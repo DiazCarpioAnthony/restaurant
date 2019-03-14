@@ -17,7 +17,7 @@ class Server {
 
     config(): void{
         this.app.set('port', process.env.PORT || 3000);
-        //MORGAN PERMITE VER LAS PETICIONES QUE SE REALIZAN EN LA CONSOLA DESPUES QUE SE REALIZAN
+        // MORGAN PERMITE VER LAS PETICIONES QUE SE REALIZAN EN LA CONSOLA DESPUES QUE SE REALIZAN
         this.app.use(morgan('dev'));
         this.app.use(cors());
         this.app.use(express.json());
@@ -25,7 +25,7 @@ class Server {
     }
 
     routes():void {
-        //LLAMA A LAS RUTAS DEL INDEXROUTES QUE SUS DIRECC CORREN A PARTIR DE ESTA DIRECCION
+        // LLAMA A LAS RUTAS DEL INDEXROUTES QUE SUS DIRECC CORREN A PARTIR DE ESTA DIRECCION
         this.app.use('/api/frase',indexRoutes);
     }
 
