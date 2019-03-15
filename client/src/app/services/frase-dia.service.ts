@@ -8,7 +8,7 @@ import { FraseDia } from '../models/FraseDia';
 })
 export class FraseDiaService {
 
-  API_URI = 'http://localhost:3000/api/frase';
+  API_URI = 'https://resturant-serve.herokuapp.com/api/frase';
   private idFraseDelDia: string;
 
   constructor(private http: HttpClient) { }
