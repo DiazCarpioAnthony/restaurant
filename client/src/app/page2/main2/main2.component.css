@@ -21,177 +21,11 @@ h1,h2,h3 {
 a{
     font-family: 'Open Sans', sans-serif;
 }
-/*-----------------------HEADER--------------*/
-header {
-    padding: 10px 0;
-    position: relative;
-    background-color: #fff;
-    width: 100%;
-    z-index: 999999;
-    -webkit-transition: all 0.4s ease 0s;
-    -moz-transition: all 0.4s ease 0s;
-    -o-transition: all 0.4s ease 0s;
-    transition: all 0.4s ease 0s; 
-}
-
-.logo {
-     display: flex;
-     justify-content: center;
-}
-.menu-right, .menu-left{
-     display: flex;
-     justify-content: space-around;
-    
-}
-header .header-wrap{
-    margin: 10px 0px;
-}
-
-header nav a{
-    display: block;
-    color: #071d27;
-    text-decoration: none;
-}
-
-header nav a:hover{
-    text-decoration: none;
-    color: #df9d23;
-    animation: 0.5s hover-transicion linear;
-}
-@keyframes hover-transicion {
-    from{
-        color: #071d27;
-    }
-    to{
-        color: #df9d23;
-        text-decoration: none;
-    }
-}
-header .menu-android{
-    visibility:hidden;
-    height: 0px;
-}
-@media screen and (max-width: 991px) {
-
-    header .menu-android{
-        visibility: visible;
-        height: auto;
-    }
-    .header-wrap{
-        display: none;
-    }
-    .navbar-toggler-icon{
-        background: #000;
-    }
-
-}
-/*-------------------- BANNER -----------------------------*/
-header{
-        position: fixed;
-}
-.banner .container-banner{
-    
-    background: url("../../../assets/img/header-bg.png") no-repeat center;
-    background-size: cover;
-    width: 100%;
-    margin: auto;
-}
-
-.banner .container-banner .contenido{
-    color: #fff;
-    height: 750px;
-}
-.banner .container-banner .contenido .banner-content hr{
-    background: #fff;
-}
-.banner .container-banner .contenido {
-    display: flex;
-    justify-content: center;
-}
-.banner .container-banner .contenido .banner-content{
-    margin: auto;
-    text-align: center;
-}
-@media screen and (max-width: 991px) {
-
-    .banner .container-banner {
-        width: 100%;
-        height: 500px;
-    } 
-    .banner .container-banner .contenido {
-        height: 500px;
-    }
-}
-
-
-/*Por ahora para poner el banner*/
-@media screen and (max-width: 991px) {
-
-    .banner{
-        margin-top: 80px;
-    }
-    header{
-        position: fixed;
-        margin-top: -80px;
-    }
-}
-
-/*-------------------GO-DOWN-----------------------*/
-.go-down {
-    position: relative;
-    margin-top: -52px;
-    z-index: 222222;
-    text-align: center; 
-}
-.go-down .go-down-img {
-      cursor: pointer;
-      -webkit-animation: go-up-down 1.5s infinite 0s;
-      -moz-animation: go-up-down 1.5s infinite 0s;
-      -o-animation: go-up-down 1.5s infinite 0s;
-      animation: go-up-down 1.5s infinite 0s; 
-}
-
-@-webkit-keyframes go-up-down {
-    0% {
-        -webkit-transform: translateY(-70px);
-        -moz-transform: translateY(-70px);
-        -ms-transform: translateY(-70px);
-        -o-transform: translateY(-70px);
-        transform: translateY(-70px);
-        opacity: 0.1; 
-    }
-    100% {
-          -webkit-transform: translateY(0px);
-          -moz-transform: translateY(0px);
-          -ms-transform: translateY(0px);
-          -o-transform: translateY(0px);
-          transform: translateY(0px);
-          opacity: 1; 
-    } 
-}
-@keyframes go-up-down {
-    0% {
-        -webkit-transform: translateY(-70px);
-        -moz-transform: translateY(-70px);
-        -ms-transform: translateY(-70px);
-        -o-transform: translateY(-70px);
-        transform: translateY(-70px);
-        opacity: 0.1; 
-    }
-    100% {
-        -webkit-transform: translateY(0px);
-        -moz-transform: translateY(0px);
-        -ms-transform: translateY(0px);
-        -o-transform: translateY(0px);
-        transform: translateY(0px);
-        opacity: 1; 
-    } 
-}
 
 
 /*-------------------MENU-AREA---------------------*/
 .menu-area .container2{
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 .menu-area .container2 img{
@@ -201,6 +35,11 @@ header{
     margin: 30px auto;
     margin-bottom: 15px;
     display: none;
+}
+.delimitar{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
 }
 .menu-area .container2 h3{
     display: block;
