@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node build/index.js",
     "build": "tsc -w",
-    "heroku-prebuild": "npm install --dev",
     "dev": "nodemon build/index.js"
   },
   "keywords": [],
