@@ -3,6 +3,8 @@ import morgan from 'morgan';
 import cors from 'cors';
 
 import indexRoutes from './routes/indexRoutes';
+import platoRoutes from './routes/platoRoutes';
+import bebidaRoutes from './routes/bebidaRoutes';
 
 class Server {
     
@@ -27,6 +29,8 @@ class Server {
     routes():void {
         // LLAMA A LAS RUTAS DEL INDEXROUTES QUE SUS DIRECC CORREN A PARTIR DE ESTA DIRECCION
         this.app.use('/api/frase',indexRoutes);
+        this.app.use('/api/plato',platoRoutes);
+        this.app.use('/api/bebida',bebidaRoutes);
     }
 
     start():void {

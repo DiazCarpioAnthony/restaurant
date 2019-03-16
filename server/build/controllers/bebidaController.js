@@ -12,51 +12,45 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
-class IndexController {
+class BebidaController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const frasesDias = yield database_1.default.query('SELECT * FROM fraseDia');
-            res.json(frasesDias);
+            const bebidas = yield database_1.default.query('SELECT * FROM bebida');
+            res.json(bebidas);
         });
     }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { idFrase } = req.params;
-            const fraseHoy = yield database_1.default.query('SELECT * FROM fraseDia WHERE idFrase = ?', [idFrase]);
-            if (fraseHoy.length > 0) {
-                res.json(fraseHoy);
+            const { idBebida } = req.params;
+            const bebidaFound = yield database_1.default.query('SELECT * FROM bebida WHERE idBebida = ?', [idBebida]);
+            if (bebidaFound.length > 0) {
+                res.json(bebidaFound);
             }
             else {
-                res.status(404).json({ text: "No hay frases" });
+                res.status(404).json({ text: "No hay bebidas" });
             }
-        });
-    }
-    count(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const numFrases = yield database_1.default.query('SELECT COUNT(*) AS "CANTIDAD" FROM fraseDia');
-            res.json(numFrases);
         });
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO fraseDia set ?', [req.body]);
-            res.json({ text: 'creating frase' });
+            yield database_1.default.query('INSERT INTO bebida set ?', [req.body]);
+            res.json({ text: 'creating bebida' });
         });
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { idFrase } = req.params;
-            yield database_1.default.query('UPDATE fraseDia set ? WHERE idFrase = ?', [req.body, idFrase]);
-            res.json({ text: 'Updating frase ' + req.params.id });
+            const { idBebida } = req.params;
+            yield database_1.default.query('UPDATE bebida set ? WHERE idBebida = ?', [req.body, idBebida]);
+            res.json({ text: 'Updating bebida ' + req.params.id });
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { idFrase } = req.params;
-            yield database_1.default.query('DELETE FROM fraseDia WHERE idFrase = ?', [idFrase]);
-            res.json({ text: 'Deleting frase ' + req.params.id });
+            const { idBebida } = req.params;
+            yield database_1.default.query('DELETE FROM bebida WHERE idBebida = ?', [idBebida]);
+            res.json({ text: 'Deleting bebida ' + req.params.id });
         });
     }
 }
-const indexController = new IndexController();
-exports.default = indexController;
+const bebidaController = new BebidaController();
+exports.default = bebidaController;

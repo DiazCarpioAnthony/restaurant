@@ -33,7 +33,7 @@ class IndexController{
     }
     public async delete(req:Request , res:Response ): Promise<void>{
         const { idFrase } = req.params;
-        await pool.query('DELETE FROM fraseDiaWHERE idFrase = ?', [idFrase]);
+        await pool.query('DELETE FROM fraseDia WHERE idFrase = ?', [idFrase]);
         res.json({text: 'Deleting frase ' + req.params.id});
     }
 

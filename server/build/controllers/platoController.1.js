@@ -12,51 +12,45 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
-class IndexController {
+class PlatoController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const frasesDias = yield database_1.default.query('SELECT * FROM fraseDia');
-            res.json(frasesDias);
+            const platos = yield database_1.default.query('SELECT * FROM plato');
+            res.json(platos);
         });
     }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { idFrase } = req.params;
-            const fraseHoy = yield database_1.default.query('SELECT * FROM fraseDia WHERE idFrase = ?', [idFrase]);
-            if (fraseHoy.length > 0) {
-                res.json(fraseHoy);
+            const { idPlato } = req.params;
+            const platoFound = yield database_1.default.query('SELECT * FROM plato WHERE idPlato = ?', [idPlato]);
+            if (platoFound.length > 0) {
+                res.json(platoFound);
             }
             else {
-                res.status(404).json({ text: "No hay frases" });
+                res.status(404).json({ text: "No hay platos" });
             }
-        });
-    }
-    count(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const numFrases = yield database_1.default.query('SELECT COUNT(*) AS "CANTIDAD" FROM fraseDia');
-            res.json(numFrases);
         });
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO fraseDia set ?', [req.body]);
-            res.json({ text: 'creating frase' });
+            yield database_1.default.query('INSERT INTO plato set ?', [req.body]);
+            res.json({ text: 'creating plato' });
         });
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { idFrase } = req.params;
-            yield database_1.default.query('UPDATE fraseDia set ? WHERE idFrase = ?', [req.body, idFrase]);
-            res.json({ text: 'Updating frase ' + req.params.id });
+            const { idPlato } = req.params;
+            yield database_1.default.query('UPDATE plato set ? WHERE idPlato = ?', [req.body, idPlato]);
+            res.json({ text: 'Updating plato ' + req.params.id });
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { idFrase } = req.params;
-            yield database_1.default.query('DELETE FROM fraseDia WHERE idFrase = ?', [idFrase]);
+            const { idPlato } = req.params;
+            yield database_1.default.query('DELETE FROM plato WHERE idPlato = ?', [idPlato]);
             res.json({ text: 'Deleting frase ' + req.params.id });
         });
     }
 }
-const indexController = new IndexController();
-exports.default = indexController;
+const platoController = new PlatoController();
+exports.default = platoController;
