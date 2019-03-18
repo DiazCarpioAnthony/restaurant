@@ -21,57 +21,19 @@
 					<div class="contenedor-menu2">
 						<article>
 							<p class="categoria">Parrilla</p>
-							<div class="platillo" id="platillo-1">
-								<p class="nombre">Sed sagittis nisl dictum</p>
-								<p class="precio">$15</p>
-								<p class="descripcion">Praesent gravida, augue sit amet dignissim rutrum, 
-								enim tellus suscipit risus.</p>
-							</div>
-							<div class="platillo" id="platillo-2">
-								<p class="nombre">Lorem ipsum dolor sit amet</p>
-								<p class="precio">$10</p>
-								<p class="descripcion">Vestibulum ac sem id massa tempor vestibulum sed 
-								ut magna</p>
-							</div>
-							<div class="platillo" id="platillo-3">
-								<p class="nombre">Sed sagittis nisl dictum</p>
-								<p class="precio">$20</p>
-								<p class="descripcion">Praesent gravida, augue sit amet dignissim rutrum, 
-								enim tellus suscipit risus.</p>
-							</div>
-							<div class="platillo" id="platillo-4">
-								<p class="nombre">Sed sagittis nisl dictum</p>
-								<p class="precio">$35</p>
-								<p class="descripcion">Praesent gravida, augue sit amet dignissim rutrum, 
-								enim tellus suscipit risus.</p>
+							<<div class="platillo" *ngFor="let plato of platos">
+								<p class="nombre">{{plato.nombre}}</p>
+								<p class="precio">${{plato.precio}}</p>
+								<p class="descripcion">{{plato.descripcion}}</p>
 							</div>
 						</article>
 
 						<article>
 							<p class="categoria">Bebidas</p>
-							<div class="platillo" id="platillo-5">
-								<p class="nombre">Sed sagittis nisl dictum</p>
-								<p class="precio">$15</p>
-								<p class="descripcion">Praesent gravida, augue sit amet dignissim rutrum, 
-								enim tellus suscipit risus.</p>
-							</div>
-							<div class="platillo" id="platillo-6">
-								<p class="nombre">Sed sagittis nisl dictum</p>
-								<p class="precio">$15</p>
-								<p class="descripcion">Praesent gravida, augue sit amet dignissim rutrum, 
-								enim tellus suscipit risus.</p>
-							</div>
-							<div class="platillo" id="platillo-7">
-								<p class="nombre">Sed sagittis nisl dictum</p>
-								<p class="precio">$15</p>
-								<p class="descripcion">Praesent gravida, augue sit amet dignissim rutrum, 
-								enim tellus suscipit risus.</p>
-							</div>
-							<div class="platillo" id="platillo-8">
-								<p class="nombre">Sed sagittis nisl dictum</p>
-								<p class="precio">$15</p>
-								<p class="descripcion">Praesent gravida, augue sit amet dignissim rutrum, 
-								enim tellus suscipit risus.</p>
+							<div class="platillo" *ngFor="let bebida of bebidas">
+								<p class="nombre">{{bebida.nombre}}</p>
+								<p class="precio">${{bebida.precio}}</p>
+								<p class="descripcion">{{bebida.descripcion}}</p>
 							</div>
 						</article>
 					</div>

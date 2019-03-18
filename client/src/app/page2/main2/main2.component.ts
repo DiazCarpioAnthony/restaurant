@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
+import { PlatoService } from '../../services/plato.service';
+import { BebidaService } from '../../services/bebida.service';
+
+import { Plato } from '../../models/Plato';
+
 declare var jQuery: any;
 declare var $: any;
 
@@ -8,13 +14,25 @@ declare var $: any;
     styleUrls: ['./main2.component.css',
         '../../../assets/css/animate.css']
 })
-export class Main2Component implements OnInit {
 
-    constructor() { }
+/* tslint:disable */
+export class Main2Component implements OnInit {
+    id:any;
+    ruta:any;
+    descripcion:string = "";
+	// Platos
+    platos: Plato = {};
+    platoFound: any;
+	// Bebidas
+    bebidas: any = [];
+    // Precio
+    precio: string = "";
+    
+    constructor(private platoService: PlatoService,
+                private bebidaService: BebidaService) { }
 
     ngOnInit() {
         $(document).ready(() => {
-
             // Efecto Precio
             $('#btn-precio').on('click', (e: any) => {
                 e.preventDefault();
@@ -44,10 +62,10 @@ export class Main2Component implements OnInit {
                 $('html, body').animate({
                     scrollTop: menuArea - 100
                 }, 500);
-                // OBTENER EL ID DEL CHECBOX
+                // OBTENER LA IMAGEN DEL FOR DEL LABEL 
                 // console.log($(this).attr("for"));
-                const $id = $(this).attr('for');
-                $('#img-platillo').attr('src', 'assets/img/' + $id + '.jpg');
+                const $imagen = $(this).attr("for");
+                $('#img-platillo').attr('src', $imagen);
 
                 // LIMPIAR LAS CLASES
                 $('#img-platillo').removeClass('animated flip');
@@ -97,15 +115,7 @@ export class Main2Component implements OnInit {
                     }, 400);
 
             });
-            // CONOCER SI ESTAN CHECKED
-            $('#btn-precio').on('click', (e: any) => {
-                e.preventDefault();
-                $('li input').each(function (index: any, elemento: any) {
-                    if ($(this).prop('checked')) {
-                        console.log('Seleccionado ' + index);
-                    }
-                });
-            });
+            
             // EFECTO SPINER
             $('.spinner .btn:first-of-type').on('click', () => {
                 $('.spinner input').val(parseInt($('.spinner input').val(), 10) + 1);
@@ -115,5 +125,43 @@ export class Main2Component implements OnInit {
             });
 
         });
+        
+		// Platos Service
+		this.platoService.getPlatos().subscribe(
+			(res: Plato) => {
+				this.platos = res;
+				console.log(this.platos);
+			},
+			err => console.log(err)
+        )
+		// Bebidas Service
+		this.bebidaService.getBebidas().subscribe(
+			res => {
+				this.bebidas = res;
+				console.log(this.bebidas);
+			},
+			err => console.log(err)
+        )
+        
+    }
+    
+    // Calcular Precio
+    calcularPrecio(){
+        let precioTotal=0;
+        $('li input').each(function (index: any, elemento: any) {
+            if($(this).val()){
+                console.log("Valor " + $(this).val() + " - Precio "+ $(this).attr("id"));
+                let valor =  $(this).val();
+                let precio1 =  $(this).attr("id");
+                precioTotal += parseFloat(precio1)*parseInt(valor);
+                console.log(precioTotal);
+            }
+        });
+        this.precio = precioTotal.toString();
+        // alert(this.precio);
+    }
+
+    setDescripcion(descripcion: string){
+        this.descripcion = descripcion;
     }
 }

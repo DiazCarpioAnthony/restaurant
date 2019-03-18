@@ -1,12 +1,24 @@
 .comentarios{
     width: 80%;
     margin: auto;
-    padding: 50px 10px; 
+    padding: 50px 10px;
 }
 .comentarios h3{
     font-weight: bold;
     font-size: 30px;
     font-family: 'Poppins', sans-serif;
+}
+.comentarios h2{
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Arial', sans-serif;
+    color: rgb(76, 102, 47);
+}
+.ocultar{
+    position: absolute;
+}
+.arriba{
+    background: #fff;
 }
 @media screen and (max-width: 800px) {
     .comentarios{
@@ -14,4 +26,10 @@
         margin: auto;
         padding: 50px 0px; 
     }
+    .comentarios h2{
+        font-weight: bold;
+        font-size: 14px;
+        font-family: 'Arial', sans-serif;
+    }
+    
 }

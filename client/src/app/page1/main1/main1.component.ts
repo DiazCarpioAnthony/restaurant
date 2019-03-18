@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FraseDiaService } from '../../services/frase-dia.service';
+import { PlatoService } from '../../services/plato.service';
+import { BebidaService } from '../../services/bebida.service';
+import { Plato } from 'src/app/models/Plato';
+import { Bebida } from 'src/app/models/Bebida';
 
 declare var jQuery: any;
 declare var $: any;
@@ -22,8 +26,14 @@ export class Main1Component implements OnInit {
 	size: number;
 	description: string;
 	autor: string;
+	// Platos
+	platos: any = [];
+	// Bebidas
+	bebidas: any = [];
 
-	constructor(private fraseDiaService: FraseDiaService) {
+	constructor(private fraseDiaService: FraseDiaService, 
+				private platoService: PlatoService, 
+				private bebidaService: BebidaService) {
 		this.setSeed(this.seed);
 	}
 
@@ -193,6 +203,22 @@ export class Main1Component implements OnInit {
 
 				this.description = this.fraseDia[0]['descripcion'];
 				this.autor = this.fraseDia[0]['autor'];
+			},
+			err => console.log(err)
+		)
+		// Platos Service
+		this.platoService.getPlatos().subscribe(
+			res => {
+				this.platos = res;
+				console.log(this.platos);
+			},
+			err => console.log(err)
+		)
+		// Bebidas Service
+		this.bebidaService.getBebidas().subscribe(
+			res => {
+				this.bebidas = res;
+				console.log(this.bebidas);
 			},
 			err => console.log(err)
 		)

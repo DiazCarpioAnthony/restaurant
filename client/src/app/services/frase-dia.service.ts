@@ -8,8 +8,8 @@ import { FraseDia } from '../models/FraseDia';
 })
 export class FraseDiaService {
 
-  API_URI2 = 'https://resturant-serve.herokuapp.com/api/frase';
-  API_URI = 'http://localhost:3000/api/frase';
+  API_URI = 'https://resturant-serve.herokuapp.com/api/frase';
+  API_URI2 = 'http://localhost:3000/api/frase';
   private idFraseDelDia: string;
 
   constructor(private http: HttpClient) { }
@@ -24,7 +24,7 @@ export class FraseDiaService {
     return this.http.get(`${this.API_URI}/${idFrase}`);
   }
   deleteFrase(idFrase: string) {
-    return this.http.delete(`${this.API_URI}/${idFrase}`)
+    return this.http.delete(`${this.API_URI}/${idFrase}`);
   }
   saveFrase(fraseNew: FraseDia) {
     return this.http.post(`${this.API_URI}/`, fraseNew);
