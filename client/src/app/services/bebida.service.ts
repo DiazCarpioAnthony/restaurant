@@ -8,8 +8,8 @@ import { Bebida } from '../models/Bebida';
 })
 export class BebidaService {
 
-  API_URI = 'https://resturant-serve.herokuapp.com/api/bebida';
-  API_URI2 = 'http://localhost:3000/api/bebida';
+  API_URI2 = 'https://resturant-serve.herokuapp.com/api/bebida';
+  API_URI = 'http://localhost:3000/api/bebida';
 
   constructor(private http: HttpClient) { }
 

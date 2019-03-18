@@ -62,8 +62,8 @@ export class Main2Component implements OnInit {
                 $('html, body').animate({
                     scrollTop: menuArea - 100
                 }, 500);
-                // OBTENER LA IMAGEN DEL FOR DEL LABEL 
-                // console.log($(this).attr("for"));
+                // OBTENER LA IMAGEN DEL FOR DEL LABEL - OBS CUANDO USO SERVIDOR LOCAL CORRE PERO EN HEROKU SOLO CAMBIA BD
+                 console.log("FOR: "+$(this).attr("for"));
                 const $imagen = $(this).attr("for");
                 $('#img-platillo').attr('src', $imagen);
 
