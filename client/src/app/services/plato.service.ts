@@ -8,8 +8,8 @@ import { Plato } from '../models/Plato';
 })
 export class PlatoService {
 
-  API_URI2 = 'https://resturant-serve.herokuapp.com/api/plato';
-  API_URI = 'http://localhost:3000/api/plato';
+  API_URI = 'https://resturant-serve.herokuapp.com/api/plato';
+  API_URI2 = 'http://localhost:3000/api/plato';
 
   constructor(private http: HttpClient) { }
 

@@ -200,6 +200,9 @@ header .textos h3 {
 	padding-bottom: 20px;
 	border-bottom:4px dotted #000;
 	overflow: hidden;
+}
+.main .menu .platillo .nombre{
+
 	cursor: pointer;
 }
 
@@ -402,8 +405,9 @@ footer .copyright a {
 	}
 
 	.main .mapa {
-		width: 80%;
+		width: 92%;
 		margin: auto;
+		padding: 15px 0px;
 	}
 }
 

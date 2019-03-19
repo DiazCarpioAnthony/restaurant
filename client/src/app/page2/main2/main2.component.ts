@@ -53,68 +53,6 @@ export class Main2Component implements OnInit {
                     scrollTop: menuArea - 100
                 });
             });
-
-
-            // Efecto platillo
-            $('.name-platillo').on('click', function (e: any) {
-                e.preventDefault();
-                // PONER EL SCROLL AL INICIO DEL MENU-AREA
-                $('html, body').animate({
-                    scrollTop: menuArea - 100
-                }, 500);
-                // OBTENER LA IMAGEN DEL FOR DEL LABEL - OBS CUANDO USO SERVIDOR LOCAL CORRE PERO EN HEROKU SOLO CAMBIA BD
-                 console.log("FOR: "+$(this).attr("for"));
-                const $imagen = $(this).attr("for");
-                $('#img-platillo').attr('src', $imagen);
-
-                // LIMPIAR LAS CLASES
-                $('#img-platillo').removeClass('animated flip');
-                $('#descripcion-platillo').removeClass('animated bounceInLeft');
-                // RESPONSIVE
-                if ($(window).width() < 991) {
-                    $('#img-platillo').css({
-                        display: 'none',
-                        'animation-duration': '1s',
-                        width: '50%',
-                        height: '250px'
-                    });
-                } else {
-                    $('#img-platillo').css({
-                        display: 'none',
-                        'animation-duration': '1s',
-                        width: '50%',
-                        height: '450px'
-                    });
-                }
-
-                // AGREGAR LAS CLASES
-                $('#img-platillo').addClass('animated flip');
-                // RESPONSIVE
-                if ($(window).width() < 991) {
-                    $('#img-platillo').css({
-                        display: 'block',
-                        'animation-duration': '1s',
-                        width: '50%',
-                        height: '250px'
-                    });
-                } else {
-                    $('#img-platillo').css({
-                        display: 'block',
-                        'animation-duration': '1s',
-                        width: '50%',
-                        height: '450px'
-                    });
-                }
-                setTimeout(
-                    () => {
-                        $('#descripcion-platillo').addClass('animated bounceInLeft');
-                        $('#descripcion-platillo').css({
-                            display: 'block',
-                            'animation-duration': '1s'
-                        });
-                    }, 400);
-
-            });
             
             // EFECTO SPINER
             $('.spinner .btn:first-of-type').on('click', () => {
@@ -161,7 +99,66 @@ export class Main2Component implements OnInit {
         // alert(this.precio);
     }
 
-    setDescripcion(descripcion: string){
+    setDescripcion(descripcion: string, imagen: string){
         this.descripcion = descripcion;
+
+        const menuArea: any = $('.menu-list').offset().top;
+            // PONER EL SCROLL AL INICIO DEL MENU-AREA
+            $('html, body').animate({
+                scrollTop: menuArea - 100
+            }, 500);
+            // OBTENER LA IMAGEN DEL FOR DEL LABEL - OBS CUANDO USO SERVIDOR LOCAL CORRE PERO EN HEROKU SOLO CAMBIA BD
+            
+            let $imagen = imagen
+            $('#img-platillo').attr('src', $imagen);
+
+            // LIMPIAR LAS CLASES
+            $('#img-platillo').removeClass('animated flip');
+            $('#descripcion-platillo').removeClass('animated bounceInLeft');
+            // RESPONSIVE
+            if ($(window).width() < 991) {
+                $('#img-platillo').css({
+                    display: 'none',
+                    'animation-duration': '1s',
+                    width: '50%',
+                    height: '250px'
+                });
+            } else {
+                $('#img-platillo').css({
+                    display: 'none',
+                    'animation-duration': '1s',
+                    width: '50%',
+                    height: '450px'
+                });
+            }
+
+            // AGREGAR LAS CLASES
+            $('#img-platillo').addClass('animated flip');
+            // RESPONSIVE
+            if ($(window).width() < 991) {
+                $('#img-platillo').css({
+                    display: 'block',
+                    'animation-duration': '1s',
+                    width: '50%',
+                    height: '250px'
+                });
+            } else {
+                $('#img-platillo').css({
+                    display: 'block',
+                    'animation-duration': '1s',
+                    width: '50%',
+                    height: '450px'
+                });
+            }
+            setTimeout(
+                () => {
+                    $('#descripcion-platillo').addClass('animated bounceInLeft');
+                    $('#descripcion-platillo').css({
+                        display: 'block',
+                        'animation-duration': '1s'
+                    });
+                }, 400);
+
+
     }
 }

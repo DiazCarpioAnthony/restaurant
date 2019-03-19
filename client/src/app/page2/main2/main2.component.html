@@ -18,7 +18,7 @@
 								<ul class="list">
 									<li *ngFor="let plato of platos">
 										<input type="number" id="{{plato.precio}}" class="count" value="0" min="0" max="100"/>
-										<label class="name-platillo" for="{{plato.imagen}}" (click)="setDescripcion(plato.descripcion)">{{plato.nombre}} ... ${{plato.precio}}</label>
+										<label class="name-platillo" for="{{plato.imagen}}" (click)="setDescripcion(plato.descripcion, plato.imagen)">{{plato.nombre}} ... ${{plato.precio}}</label>
 									</li>
 								</ul>
 							</div>
@@ -29,7 +29,7 @@
 								<ul class="list">
 									<li *ngFor="let bebida of bebidas">
 										<input type="number" id="{{bebida.precio}}" class="count" value="0" min="0" max="100"/>
-										<label class="name-platillo" for="{{bebida.imagen}}" (click)="setDescripcion(bebida.descripcion)">{{bebida.nombre}} ... ${{bebida.precio}}</label>
+										<label class="name-platillo" for="{{bebida.imagen}}" (click)="setDescripcion(bebida.descripcion, bebida.imagen)">{{bebida.nombre}} ... ${{bebida.precio}}</label>
 									</li>
 								</ul>
 							</div>

@@ -21,8 +21,8 @@
 					<div class="contenedor-menu2">
 						<article>
 							<p class="categoria">Parrilla</p>
-							<<div class="platillo" *ngFor="let plato of platos">
-								<p class="nombre">{{plato.nombre}}</p>
+							<div class="platillo" *ngFor="let plato of platos">
+								<p routerLink = '/armaTuPedido' class="nombre" id="platillo-nombre">{{plato.nombre}}</p>
 								<p class="precio">${{plato.precio}}</p>
 								<p class="descripcion">{{plato.descripcion}}</p>
 							</div>
@@ -31,7 +31,7 @@
 						<article>
 							<p class="categoria">Bebidas</p>
 							<div class="platillo" *ngFor="let bebida of bebidas">
-								<p class="nombre">{{bebida.nombre}}</p>
+								<p class="nombre" id="platillo-nombre" routerLink = '/armaTuPedido'>{{bebida.nombre}}</p>
 								<p class="precio">${{bebida.precio}}</p>
 								<p class="descripcion">{{bebida.descripcion}}</p>
 							</div>

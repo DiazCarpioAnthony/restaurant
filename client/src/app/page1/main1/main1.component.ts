@@ -5,6 +5,7 @@ import { PlatoService } from '../../services/plato.service';
 import { BebidaService } from '../../services/bebida.service';
 import { Plato } from 'src/app/models/Plato';
 import { Bebida } from 'src/app/models/Bebida';
+import { RouterLink } from '@angular/router';
 
 declare var jQuery: any;
 declare var $: any;
@@ -171,23 +172,8 @@ export class Main1Component implements OnInit {
 					}
 				}, 1000);
 			});
-			
-
-			// Efectos platillos
-			document.getElementById('platillo-1').addEventListener('click', function (e) {
-				// alert("Platillo 1");
-				window.open('http://www.google.com', '_blank');
-				// QUE ABRA LA PAGINA AUXILIAR PERO DE ESE PLATO Y QUE SE PUEDA REGRESAR A LA PAGINA PRINCIPAL O
-				// ARMA TU PLATO
-			});
-
-			// Efecto galeria
-			document.getElementById('foto-1').addEventListener('click', function (e) {
-				// alert("Platillo 1");
-				window.open('http://www.google.com', '_blank');
-			});
-
 		});
+
 
 		//Frase Dia Service
 		this.fraseDiaService.getCount().subscribe(
@@ -251,5 +237,4 @@ export class Main1Component implements OnInit {
 		}
 		return rand.toString();
 	}
-
 }

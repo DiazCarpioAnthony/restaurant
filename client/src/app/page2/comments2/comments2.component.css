@@ -14,9 +14,6 @@
     font-family: 'Arial', sans-serif;
     color: rgb(76, 102, 47);
 }
-.ocultar{
-    position: absolute;
-}
 .arriba{
     background: #fff;
 }
@@ -24,7 +21,7 @@
     .comentarios{
         width: 90%;
         margin: auto;
-        padding: 50px 0px; 
+        padding: 0px;
     }
     .comentarios h2{
         font-weight: bold;
